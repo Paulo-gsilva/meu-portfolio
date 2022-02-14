@@ -73,6 +73,12 @@ html{
     transform: translateY(-3px);
 }
 
+@media(max-width: 1250px){
+    .header-content{
+        margin: 0 2rem;
+    }
+}
+
 /*SECTION MAIN*/
 .main-container{
     display: grid;
@@ -110,6 +116,44 @@ html{
     box-shadow: 0 0.1rem 0.5rem black;
 }
 
+@media (max-width: 1260px){
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-text{
+        margin: 0 5rem;
+    }
+    
+    .main-img img{
+        width: 40rem;
+    }
+}
+
+@media (max-width: 1000px){
+    .main-container{
+        padding-top: 10rem;
+    }
+
+    .main-img img{
+        width: 30rem;
+    }
+
+    .main-text h1{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-section{
+        background: var(--325288);
+        color: var(--FAEEE7);
+        width: 8rem;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+}
+
 /*SECOND SECTION*/
 .second-container{
     padding-top: var(--gap);
@@ -130,6 +174,24 @@ html{
     justify-content: space-around;
     height: 12rem;
 }
+
+@media (max-width: 1200px){
+    .second-content{
+        margin: 0 auto;
+        width: 60rem;
+    }
+}
+
+@media (max-width: 960px){
+    .second-container h1{
+        font-size: 2rem;
+    }
+
+    .second-content{
+        width: 40rem;
+    }
+}
+
 
 /*THIRD SECTION*/
 #third-section{
@@ -160,6 +222,10 @@ html{
     padding: 1rem;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.514);
 }
+.item-info:hover{
+    transition: 0.5s;
+    transform: translateY(-10px);
+}
 
 .item-info h1{
     font-size: 2.2rem;
@@ -173,6 +239,32 @@ html{
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
+}
+
+@media (max-width: 1000px){
+    #third-section{
+        background: var(--24A19C);
+    }
+
+    .third-container{
+        padding-top: 6rem;
+    }
+    
+    .third-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .item-info{
+        width: 15rem;
+        height: 20rem;
+        margin: 1rem 2rem;
+    }
+
+    .item-info:hover{
+        transition: 0.5s;
+        transform: translateY(-10px);
+    }
 }
 
 /*CONTACT SECTION*/
@@ -210,7 +302,7 @@ html{
 }
 
 .contact-form input{
-    width: 25em;
+    width: 25rem;
     height: 3rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -235,3 +327,35 @@ html{
     box-shadow: 0 0.1rem 0.5rem black;
 }
 
+@media (max-width: 1200px){
+    .contact-img img{
+        width: 30rem;
+    }
+
+    .contact-form{
+        margin: 2rem 2rem;
+    }
+
+    .contact-design{
+        margin: 0 4rem;
+    }
+
+    .contact-form input{
+        width: 20rem;
+    }
+}
+
+
+@media (max-width: 1000px){
+    .contact-form input{
+        width: 15rem;
+    }
+}
+
+
+@media (max-width: 950px){
+    .contact-form h1{
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+}
