@@ -79,6 +79,50 @@ html{
     }
 }
 
+@media(max-width: 700px){
+    .header-container{
+        bottom: 0;
+        text-align: center;
+    }
+
+    .header-content, .header-content ul{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .header-content{
+        height: 100vh;
+    }
+
+    .header-container{
+        display: none;
+    }
+
+    .close-menu{
+        display: none;
+    }
+
+    .close-menu-label::after{
+        content: '≡';
+        position: fixed;
+        z-index: 2;
+        top: 2rem;
+        right: 2rem;
+        font-size: 1.5rem;
+        width: 1rem;
+        height: 2rem;
+        text-align: center;
+        padding: 0.5rem;
+        cursor: pointer;
+        background: var(--D96098);
+        border-radius: 20px;
+    }
+
+    .close-menu:checked~.header-container{
+        display: block;
+    }
+}
+
 /*SECTION MAIN*/
 .main-container{
     display: grid;
@@ -154,6 +198,53 @@ html{
     }
 }
 
+@media (max-width: 900px){
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .main-img img{
+        width: 40rem;
+    }
+
+    .btn-section{
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 650px){
+    .main-container{
+        margin-top: -5rem;
+    }
+
+    .main-img img{
+        width: 30rem;
+    }
+}
+
+@media (max-width: 500px){
+    .main-img img{
+        width: 25rem;
+    }
+
+    .main-text h1{
+        font-size: 2rem;
+    }
+
+    .main-text h2{
+        font-size: 1rem;
+        line-height: 1.2rem;
+        font-weight: normal;
+    }
+}
+
+@media (max-width: 400px){
+    .main-img img{
+        width: 20rem;
+    }
+}
+
 /*SECOND SECTION*/
 .second-container{
     padding-top: var(--gap);
@@ -192,6 +283,47 @@ html{
     }
 }
 
+@media (max-width: 650px){
+    .second-container h1{
+        font-size: 1.5rem;
+        margin-top: -2rem;
+        margin-bottom: 1rem;
+    }
+
+    .second-content{
+        width: 30rem;
+        margin: 1rem auto;
+    }
+
+    .second-content li{
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 500px){
+    .second-container h1{
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    .second-content{
+        width: 25rem;
+        margin: 1rem auto;
+    }
+
+}
+
+@media (max-width: 400px){
+    .second-content{
+        width: 22rem;
+    }
+
+    .second-content li{
+        font-size: 0.7rem;
+    }
+
+}
+
 
 /*THIRD SECTION*/
 #third-section{
@@ -228,10 +360,6 @@ html{
 }
 
 .item-info h1{
-    font-size: 2.2rem;
-}
-
-.item-info h1{
     font-size: 2rem;
 }
 
@@ -242,10 +370,6 @@ html{
 }
 
 @media (max-width: 1000px){
-    #third-section{
-        background: var(--24A19C);
-    }
-
     .third-container{
         padding-top: 6rem;
     }
@@ -266,6 +390,16 @@ html{
         transform: translateY(-10px);
     }
 }
+
+@media (max-width: 600px){
+    .item-info{
+        width: 10rem;
+        height: 25rem;
+        margin: 1rem 1rem;
+    }
+    
+}
+
 
 /*CONTACT SECTION*/
 #contact-section{
@@ -359,3 +493,51 @@ html{
         margin-bottom: 0.5rem;
     }
 }
+
+@media (max-width: 900px){
+    .contact-design{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form input{
+        width: 25rem;
+    }
+}
+
+@media (max-width: 600px){
+    .contact-form{
+        width: 20rem;
+        margin: auto;
+    }
+
+    .contact-form input, .contact-form button{
+        width: 15rem;
+    }
+
+    .contact-img img{
+        width: 20rem;
+    }
+
+}
+
+@media (max-width: 450px){
+    .contact-form{
+        width: 15rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-form h1{
+        font-size: 1.5rem;
+    }
+
+    .contact-form input, .contact-form button{
+        width: 12rem;
+    }
+
+    .contact-img img{
+        width: 15rem;
+    }
+
+}
+
