@@ -218,6 +218,76 @@ body{
     }
 }
 
+@media(max-width: 1060px){
+    .container-login{
+        width: 50rem;
+        height: 30rem;
+    }
+    
+    .img-login img{
+        width: 30rem;
+    }
+
+    .box-login{
+        background: #fc4c29d2;
+        height: 25rem;
+    }
+
+    
+    .box-login{
+        background: #fc4c29d2;
+        height: 25rem;
+        margin: 1.5rem;
+    }
+
+    .box-login h1{
+        font-size: 2rem;
+    }
+
+    .input-box-login button{
+        font-size: 1rem;
+        width: 14rem;
+    }
+
+    .email-login, .password-login{
+        width: 14rem;
+    }
+
+    .box-form-sign{
+        height: 28rem;
+    }
+    
+    .form-sign input{
+        width: 15rem;
+        height: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-sign label{
+        width: 15rem;
+        margin-bottom: 0.2rem;
+    }
+    
+    .form-sign button{
+        width: 6rem;
+    }
+    
+    .form-sign div{
+        width: 15rem;
+    }
+     
+    .welcome{
+        font-size: 1rem;
+        height: 10rem;
+        width: 25rem;
+    }
+    
+    .welcome .investiment{
+        width: 20rem;
+    }
+
+}
+
 .hide{ 
     display:none; 
 }
