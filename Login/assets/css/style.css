@@ -188,5 +188,40 @@ body{
     width: 30rem;
 }
 
-.hide{ display:none; }
-.show{ display:block; }
+.animation{
+    transform: translateY(1rem); 
+    animation: slide 0.15s forwards;
+}
+
+.animationY{
+    transform: translateX(1rem); 
+    animation: slideY 0.15s forwards;
+}
+
+@keyframes slide{
+    from{
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideY{
+    from{
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.hide{ 
+    display:none; 
+}
+
+.show{ 
+    display:block;
+}
