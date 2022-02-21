@@ -2,6 +2,7 @@ const login = document.querySelector('.button-login');
 const sign = document.querySelector('.button-sign');
 const buttonReturn = document.querySelector('.button-return');
 const buttonReturnSign = document.querySelector('.button-return-sign');
+const buttonSignRegister = document.querySelector('.button-sign-register');
 
 function functionRemoveLogin(){
     const inputButtons = document.querySelector('.input-buttons');
@@ -61,6 +62,40 @@ function functionShowFormSign(){
     welcome.className = welcome.className.replace('hide', 'show');
     functionButtonReturnSign();
 }
+
+function registerNewUser(){
+    let name = document.getElementById('name');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let number = document.getElementById('number');
+    let cpf = document.getElementById('cpf');
+    let birth = document.getElementById('birth');
+
+    let data = JSON.parse(localStorage.getItem('dataUsers'));
+
+    if(data == null){
+        localStorage.setItem('dataUsers', '[]');
+        data = [];
+    }
+
+    let saveData = {
+        name: name.value,
+        email: email.value,
+        password: password.value,
+        number: number.value,
+        cpf: cpf.value,
+        birth: birth.value
+    }
+
+    data.push(saveData);
+    localStorage.setItem('dataUsers', JSON.stringify(data));
+}
+
+
+buttonSignRegister.addEventListener('click', function(event){
+    registerNewUser();
+    alert('Conta Registrada Com Sucesso')
+});
 
 login.addEventListener('click', function(event){    
     functionRemoveLogin();
