@@ -1,8 +1,10 @@
 const login = document.querySelector('.button-login');
+const buttonLoginOpen = document.querySelector('.button-login-open');
 const sign = document.querySelector('.button-sign');
+const buttonSignRegister = document.querySelector('.button-sign-register');
 const buttonReturn = document.querySelector('.button-return');
 const buttonReturnSign = document.querySelector('.button-return-sign');
-const buttonSignRegister = document.querySelector('.button-sign-register');
+
 
 function functionRemoveLogin(){
     const inputButtons = document.querySelector('.input-buttons');
@@ -71,7 +73,7 @@ function registerNewUser(){
     let cpf = document.getElementById('cpf');
     let birth = document.getElementById('birth');
 
-    let data = JSON.parse(localStorage.getItem('dataUsers'));
+    let data = JSON.parse(localStorage.getItem('dataUsers')); //LENDO DADOS ARMAZENADOS
 
     if(data == null){
         localStorage.setItem('dataUsers', '[]');
@@ -88,20 +90,34 @@ function registerNewUser(){
     }
 
     data.push(saveData);
-    localStorage.setItem('dataUsers', JSON.stringify(data));
+    localStorage.setItem('dataUsers', JSON.stringify(data)); //ARMAZENANDO DADOS
 }
 
+function loginVerify(textEmail, textPassword){
+    let data = JSON.parse(localStorage.getItem('dataUsers'));
 
-buttonSignRegister.addEventListener('click', function(event){
+    for(let index of data){
+        if(index.email === textEmail){
+            if(index.password === textPassword) alert('Login Efetuado Com Sucesso!');
+            if(index.password !== textPassword) alert('Senha Incorreta');
+        }
+    }
+}
+
+buttonLoginOpen.addEventListener('click', (event) => {
+    let email = document.querySelector('.email-login');
+    let password = document.querySelector('.password-login');
+
+    event.preventDefault();
+    loginVerify(email.value, password.value);
+});
+
+buttonSignRegister.addEventListener('click', (event) => {
+    event.preventDefault();
     registerNewUser();
     alert('Conta Registrada Com Sucesso')
 });
 
-login.addEventListener('click', function(event){    
-    functionRemoveLogin();
-});
-
-sign.addEventListener('click', function(event){
-    functionRemoveAllFromContainer();
-});
+login.addEventListener('click', (event) => functionRemoveLogin());
+sign.addEventListener('click', (event) => functionRemoveAllFromContainer());
 
