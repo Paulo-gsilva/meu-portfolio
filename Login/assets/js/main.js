@@ -75,11 +75,6 @@ function registerNewUser(){
 
     let data = JSON.parse(localStorage.getItem('dataUsers')); //LENDO DADOS ARMAZENADOS
 
-    if(data == null){
-        localStorage.setItem('dataUsers', '[]');
-        data = [];
-    }
-
     let saveData = {
         name: name.value,
         email: email.value,
@@ -91,17 +86,47 @@ function registerNewUser(){
 
     data.push(saveData);
     localStorage.setItem('dataUsers', JSON.stringify(data)); //ARMAZENANDO DADOS
+    
 }
 
-function loginVerify(textEmail, textPassword){
+function emailVerify(textEmail){ //VERIFICA EMAILS EXISTENTES
     let data = JSON.parse(localStorage.getItem('dataUsers'));
 
-    for(let index of data){
-        if(index.email === textEmail){
-            if(index.password === textPassword) alert('Login Efetuado Com Sucesso!');
-            if(index.password !== textPassword) alert('Senha Incorreta');
+    const emailVerify = data.filter(function(email){
+        return email.email === textEmail;
+    });
+
+    return emailVerify;
+}
+
+function passwordVerify(textPassword){ //VERIFICA SENHAS EXISTENTES
+    let data = JSON.parse(localStorage.getItem('dataUsers'));
+
+    const passwordVerify = data.filter(function(password){
+        return password.password === textPassword;
+    });
+
+    return passwordVerify;
+}
+
+
+function loginVerify(textEmail, textPassword){
+    const email = emailVerify(textEmail);
+    const password = passwordVerify(textPassword);
+
+    function loopEmail(){
+        for(let index of email){
+            return index.name;
         }
     }
+
+    function loopPassword(){
+        for(let indexPass of password){
+            return indexPass.name;
+        }
+    }
+
+    let result = loopEmail() === loopPassword() ? alert('Login Efetuado Com Sucesso') : alert('Email ou Senha Incorreto');
 }
 
 buttonLoginOpen.addEventListener('click', (event) => {
@@ -110,10 +135,10 @@ buttonLoginOpen.addEventListener('click', (event) => {
 
     event.preventDefault();
     loginVerify(email.value, password.value);
+    
 });
 
 buttonSignRegister.addEventListener('click', (event) => {
-    event.preventDefault();
     registerNewUser();
     alert('Conta Registrada Com Sucesso')
 });
