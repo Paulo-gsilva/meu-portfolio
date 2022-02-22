@@ -4,7 +4,37 @@ const sign = document.querySelector('.button-sign');
 const buttonSignRegister = document.querySelector('.button-sign-register');
 const buttonReturn = document.querySelector('.button-return');
 const buttonReturnSign = document.querySelector('.button-return-sign');
+const cpf = document.querySelector('.form-sign-cpf');
+const phone = document.getElementById('number');
 
+phone.addEventListener('keypress', function(){
+    let phoneLength = phone.value.length;
+    
+    if(phoneLength === 0){
+        phone.value += '(';
+    }
+    else if(phoneLength === 3){
+        phone.value += ')';
+    }
+    else if(phoneLength === 5){
+        phone.value += ' ';
+    }
+    else if(phoneLength === 10){
+        phone.value += '-';
+    }
+
+});
+
+cpf.addEventListener('keypress', function(){
+    let cpfLength = cpf.value.length;
+    if(cpfLength === 3 || cpfLength === 7){
+        cpf.value += '.';
+    }
+    else if(cpfLength === 11){
+        cpf.value += '-';
+    }
+
+});
 
 function functionRemoveLogin(){
     const inputButtons = document.querySelector('.input-buttons');
@@ -75,6 +105,11 @@ function registerNewUser(){
 
     let data = JSON.parse(localStorage.getItem('dataUsers')); //LENDO DADOS ARMAZENADOS
 
+    if(data == null){
+        alert('Por favor, tente Novamente')
+        localStorage.setItem('dataUsers', '[]');
+    }
+
     let saveData = {
         name: name.value,
         email: email.value,
@@ -109,7 +144,6 @@ function passwordVerify(textPassword){ //VERIFICA SENHAS EXISTENTES
     return passwordVerify;
 }
 
-
 function loginVerify(textEmail, textPassword){
     const email = emailVerify(textEmail);
     const password = passwordVerify(textPassword);
@@ -139,6 +173,7 @@ buttonLoginOpen.addEventListener('click', (event) => {
 });
 
 buttonSignRegister.addEventListener('click', (event) => {
+    event.preventDefault();
     registerNewUser();
     alert('Conta Registrada Com Sucesso')
 });
