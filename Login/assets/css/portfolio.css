@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+:root{
+    --082032: #082032;
+    --2C394B: #2C394B;
+    --334756: #334756;
+    --FF4C29: #FF4C29;
+    --ff4d29bd: #ff4d29bd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100vw;
+    background: #070707;
+    font-family: 'Kanit', sans-serif;
+}
+
+.header-container{
+    color: var(--FF4C29);
+    background: var(--2C394B);
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid var(--082032);
+}
+
+.left-header-container{
+    margin: auto 0;
+    margin-left: 16rem;
+}
+
+.right-header-container{
+    width: 12rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5rem;
+}
+
+.right-header-container button{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.profile-right-header-container{
+    width: 8.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile-right-header-container button{
+    width: 3rem;
+    height: 3rem;
+}
+
+.left-aside-container{
+    background: var(--2C394B);
+    width: 15rem;
+    height: 40.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-aside-container, .bottom-aside-container{
+    color: var(--ff4d29bd);
+    margin: 0 4rem;
+}
+
+.top-aside-container h1{
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.top-aside-container div{
+    margin: 1rem 0;
+}
+
+.top-aside-container div h2:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    font-size: 1.6rem;
+}
+
+.bottom-aside-container button{
+    border: none;
+    background: var(--082032);
+    width: 7rem;
+    height: 3rem;
+    border-radius: 20px;
+    color: var(--FF4C29);
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+
+.bottom-aside-container button:hover{
+    transform: translateY(-3px);
+    transition: 0.3s;
+    box-shadow: -0.1rem 0.1rem white;
+}

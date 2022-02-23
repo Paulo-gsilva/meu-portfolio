@@ -173,7 +173,6 @@ buttonLoginOpen.addEventListener('click', (event) => {
 });
 
 buttonSignRegister.addEventListener('click', (event) => {
-    event.preventDefault();
     registerNewUser();
     alert('Conta Registrada Com Sucesso')
 });
