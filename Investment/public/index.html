@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container-login">
+        <div class="img-login show">
+            <img src="../src/assets/img/Invest.svg">
+        </div>
+        <div class="box-login-js show">
+            <div class="box-login">
+                <div class="text-box-login animation">
+                    <h1>Hello, dear INVESTOR</h1>
+                </div>
+                <div class="input-box-login">
+                    <div class="input-buttons show animation">
+                        <button class="button-login" type="submit">Login</button>
+                        <button class="button-sign" type="submit">Sign In</button>
+                    </div>
+                    <form class="form-login hide animation">
+                        <input type="email" class="email-login" placeholder="Type your e-mail">
+                        <input type="password" class="password-login" placeholder="Type your password">
+                        <button class="button-login-open" type="submit">Login</button>
+                        <h3 class="button-return">Return</h3>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="welcome hide animationY">
+            <h1>welcome to the <div class="investiment">investment portfolio</div></h1>
+        </div>
+        <div class="box-form-sign hide animation">
+            <form class="form-sign">
+                <label for="name">Name</label><input id="name" type="text" placeholder="Type your name">
+                <label for="email">Email</label><input id="email" type="email" placeholder="Type your email">
+                <label for="password">Password</label><input id="password" type="password" placeholder="Type your password">
+                <label for="number">Number</label><input id="number" type="text" class="form-sign-number" maxlength="15" placeholder="Type your number">
+                <label for="cpf">CPF</label><input id="cpf" type="text" class="form-sign-cpf" maxlength="14" placeholder="Type your CPF">
+                <label for="birth">Birth</label><input id="birth" type="date">
+                <div>
+                    <button class="button-sign-register" type="submit">Sign In</button>
+                    <h3 class="button-return-sign">Return</h3>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/bundle.js"></script>
+</body>
+</html>
